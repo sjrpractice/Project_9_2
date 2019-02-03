@@ -1,0 +1,22 @@
+---
+title: 'Project 9.2: Visualizing tooth growth data using Plot.ly'
+author: "Steve"
+date: "February 3, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Guinea pig tooth growth
+
+This project uses plotly to visualize data on guiniea pig tooth growth based on the dosage (in milligrams per day) and the supplement type: ascorbic acid (VJ) or orange juice (OJ).
+
+```{r pressure, echo=FALSE}
+library(datasets)
+library(plotly)
+library(dplyr)
+data("ToothGrowth")
+plot_ly(ToothGrowth, x= ~dose, y= ~len, type = "scatter", mode="markers", color= ~supp)
+```
